@@ -566,3 +566,30 @@ Processing by PostsController#show as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 67.190.86.43 at 2018-02-20 02:14:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 248ms (Views: 235.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/5/edit" for 67.190.86.43 at 2018-02-20 02:14:28 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/posts/5" for 67.190.86.43 at 2018-02-20 02:14:36 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vmb6DNAJnCAavMIm/vOHMHcH/6eD3OIi2Pv2x5ZwKCF3lw9S8A8IIb3VtMiQ6LNMQDt6FB12rc24i/86lZdDkA==", "title"=>"444444", "description"=>"mmmmmmm", "commit"=>"Submit Post", "id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "444444"], ["description", "mmmmmmm"], ["updated_at", "2018-02-20 02:14:36.730703"], ["id", 5]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.60.187:36568/posts/5
+Completed 302 Found in 50ms (ActiveRecord: 3.2ms)
