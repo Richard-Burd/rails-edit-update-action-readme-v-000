@@ -593,3 +593,18 @@ Processing by PostsController#update as HTML
   [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
 Redirected to http://165.227.60.187:36568/posts/5
 Completed 302 Found in 50ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/posts/5" for 67.190.86.43 at 2018-02-20 02:14:36 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 67.190.86.43 at 2018-02-20 02:14:40 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.5ms)
