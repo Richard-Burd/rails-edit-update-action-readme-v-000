@@ -460,3 +460,36 @@ Processing by PostsController#create as HTML
   [1m[36m (68.0ms)[0m  [1mcommit transaction[0m
 Redirected to http://165.227.60.187:36568/posts/3
 Completed 302 Found in 81ms (ActiveRecord: 69.1ms)
+
+
+Started GET "/posts/3" for 67.190.86.43 at 2018-02-20 02:10:19 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 54ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 67.190.86.43 at 2018-02-20 02:10:23 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3/edit" for 67.190.86.43 at 2018-02-20 02:10:33 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 67.190.86.43 at 2018-02-20 02:10:39 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SaurxabP9U3XI7eUms7H09EaGiudvMvlIaI0a4tsO9ZoWl6bhslhTHBKwXr01fOv5iafmAMWhApB0j2WiItQZw==", "title"=>"Asdf", "description"=>"zxcv", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Asdf"], ["description", "zxcv"], ["created_at", "2018-02-20 02:10:39.286105"], ["updated_at", "2018-02-20 02:10:39.286105"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.60.187:36568/posts/4
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
